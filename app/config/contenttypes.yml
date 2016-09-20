@@ -34,6 +34,7 @@ news:
         seo:
             type: seo
             group: "SEO settings"
+    taxonomy: [ categories ]
     record_template: newsitem.twig
     listing_template: news.twig
     sort: -id
