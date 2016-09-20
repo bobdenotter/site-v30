@@ -15,14 +15,20 @@
                 Published: {{ item.datepublish|date("l j F Y") }} by
                 <a href="{{ profile_link(item.user) }}">{{ item.user.displayname }}</a>
             </p>
+
             <div class="articlebody">
                 {% if item.image %}
                 <a href="{{ item.image|image() }}" class="magnific">
                     <img src="{{ item.image|thumbnail(700,300) }}">
                 </a>
                 {% endif %}
-                <p>{{ item.excerpt(600) }}</p>
-                <a href="{{item.link}}" class="button">Read the full article</a>
+
+                {% if "new release" not in item.taxonomy.categories %}
+                    <p>{{ item.excerpt(600) }}</p>
+                    <a href="{{item.link}}" class="button">Read the full article</a>
+                {% else %}
+                    {{ item.introduction }}
+                {% endif %}
             </div>
         </article>
         {% endfor %}

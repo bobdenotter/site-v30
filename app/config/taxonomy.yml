@@ -23,7 +23,7 @@ categories:
     singular_slug: category
     behaves_like: categories
     multiple: true
-    options: [ news, events, movies, music, books, life, love, fun ]
+    options: [ news, new release, events, movies, music, books, life, love, fun ]
 
 slidechapters:
     slug: slidechapters
